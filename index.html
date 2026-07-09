@@ -4,82 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arts101.HK</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        
-        <aside class="sidebar">
-            <div class="personal-icon-box">
-                <span class="placeholder-text">YOUR ICON</span>
-                </div>
+    <header class="top-navbar">
+        <div class="brand-identity">
+            <div class="mini-profile-icon">
+                <img src="icon.jpg" alt="Icon" onerror="this.style.display='none';">
+            </div>
+            <span class="brand-text">Arts101.HK</span>
+        </div>
+        <div class="nav-social-links">
+            <a href=" " class="nav-link">Instagram 1</a>
+            <a href=" " class="nav-link">Instagram 2</a>
+        </div>
+    </header>
 
-            <div class="card art-scroller-box">
-                <div class="sidebar-title">Drawings</div>
-                <div class="art-track-container">
-                    <div class="art-track" id="artTrack">
-                        <div class="art-item">Art 1</div>
-                        <div class="art-item">Art 2</div>
-                        <div class="art-item">Art 3</div>
-                        <div class="art-item">Art 4</div>
-                        <div class="art-item">Art 5</div>
-                        <div class="art-item">Art 6</div>
-                    </div>
+    <div class="fixed-visual-viewport">
+        <div class="showcase-frame active" id="frame-1">
+            <div class="image-placeholder">EVENT 1 IMAGE</div>
+        </div>
+        <div class="showcase-frame" id="frame-2">
+            <div class="image-placeholder">EVENT 2 IMAGE</div>
+        </div>
+        <div class="showcase-frame" id="frame-3">
+            <div class="image-placeholder">EVENT 3 IMAGE</div>
+        </div>
+    </div>
+
+    <main class="scroll-narrative-container">
+        
+        <section class="narrative-section hero-slide" data-frame="1">
+            <div class="content-wrapper">
+                <h1 class="hero-title">Welcome to<br><span class="accent-text">Arts101.HK</span></h1>
+                <p class="hero-subtitle">Scroll down to explore upcoming events and meet our team.</p>
+                <div class="scroll-indicator">↓ Scroll to Discover</div>
+            </div>
+        </section>
+
+        <section class="narrative-section content-slide" data-frame="1">
+            <div class="content-wrapper card-reveal">
+                <span class="section-tag">Event 01</span>
+                <h2 class="slide-heading">Annual Gallery Exhibition 2026</h2>
+                <p class="slide-description">Our flagship exhibition gathers local underground visual artists under one roof, centering around physical-digital dualism.</p>
+                <a href="event1.html" class="action-btn">Explore Event Details →</a>
+            </div>
+        </section>
+
+        <section class="narrative-section content-slide" data-frame="2">
+            <div class="content-wrapper card-reveal">
+                <span class="section-tag">Event 02</span>
+                <h2 class="slide-heading">Live Figure Drawing Workshop</h2>
+                <p class="slide-description">An immersive, intensive single-session figure drawing lab structured around experimental dynamic human postures.</p>
+                <a href="event2.html" class="action-btn">Reserve a Spot →</a>
+            </div>
+        </section>
+
+        <section class="narrative-section content-slide" data-frame="3">
+            <div class="content-wrapper card-reveal">
+                <span class="section-tag">Event 03</span>
+                <h2 class="slide-heading">Independent Art Panel Talk</h2>
+                <p class="slide-description">Join an interactive cross-disciplinary panel session with emerging independent designers discussing fine art in multimedia.</p>
+                <a href="event3.html" class="action-btn">Join Stream →</a>
+            </div>
+        </section>
+
+        <section class="narrative-section team-slide" data-frame="3">
+            <div class="content-wrapper wide-wrapper">
+                <h2 class="slide-heading centered">Meet the Team</h2>
+                
+                <div class="team-grid">
+                    <a href="profile1.html" class="team-member-node">
+                        <div class="circle-avatar"><span>P1</span></div>
+                        <div class="member-name">name1</div>
+                    </a>
+                    <a href="profile2.html" class="team-member-node">
+                        <div class="circle-avatar"><span>P2</span></div>
+                        <div class="member-name">name2</div>
+                    </a>
+                    <a href="profile3.html" class="team-member-node">
+                        <div class="circle-avatar"><span>P3</span></div>
+                        <div class="member-name">name3</div>
+                    </a>
+                    <a href="profile4.html" class="team-member-node">
+                        <div class="circle-avatar"><span>P4</span></div>
+                        <div class="member-name">name4</div>
+                    </a>
+                    <a href="profile5.html" class="team-member-node">
+                        <div class="circle-avatar"><span>P5</span></div>
+                        <div class="member-name">name5</div>
+                    </a>
+                    <a href="profile6.html" class="team-member-node">
+                        <div class="circle-avatar"><span>P6</span></div>
+                        <div class="member-name">name6</div>
+                    </a>
                 </div>
             </div>
-        </aside>
+        </section>
 
-        <main class="main-content">
-            <header class="header-section">
-                <h1 class="main-title"><a href="index.html">Arts101.HK</a></h1>
-                <div class="links-row">
-                    <a href="" class="ig-link">Instagram 1</a>
-                    <a href="" class="ig-link">Instagram 2</a>
-                </div>
-            </header>
-
-            <section class="card">
-                <h2 class="section-heading">EVENT</h2>
-                <div class="icon-grid">
-                    <a href="event1.html" class="circle-icon-btn" title="Exhibition 2026">E1</a>
-                    <a href="event2.html" class="circle-icon-btn" title="Live Drawing Workshop">E2</a>
-                    <a href="event3.html" class="circle-icon-btn" title="Art Panel Talk">E3</a>
-                </div>
-            </section>
-
-            <section class="card">
-                <h2 class="section-heading">Meet the Team</h2>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <a href="profile1.html" class="circle-icon-btn">P1</a>
-                        <div class="team-name-label">name1</div>
-                    </div>
-                    <div class="team-member">
-                        <a href="profile2.html" class="circle-icon-btn">P2</a>
-                        <div class="team-name-label">name2</div>
-                    </div>
-                    <div class="team-member">
-                        <a href="profile3.html" class="circle-icon-btn">P3</a>
-                        <div class="team-name-label">name3</div>
-                    </div>
-                    <div class="team-member">
-                        <a href="profile4.html" class="circle-icon-btn">P4</a>
-                        <div class="team-name-label">name4</div>
-                    </div>
-                    <div class="team-member">
-                        <a href="profile5.html" class="circle-icon-btn">P5</a>
-                        <div class="team-name-label">name5</div>
-                    </div>
-                    <div class="team-member">
-                        <a href="profile6.html" class="circle-icon-btn">P6</a>
-                        <div class="team-name-label">name6</div>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
