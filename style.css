@@ -1,0 +1,254 @@
+style.css
+
+/* Global variables for seamless theme modifications */
+:root {
+    --bg-color: #E2E8F0;        /* Sleek background gray */
+    --card-bg: #FFFFFF;         /* Pure white cards */
+    --accent-gray: #F1F5F9;     /* Light gray interior fill */
+    --border-color: #1E293B;    /* Sharp, dark framing lines */
+    --text-main: #0F172A;       /* Midnight dark font */
+    --border-radius: 20px;
+    --neo-shadow: 6px 6px 0px #1E293B; /* Crisp signature depth shadow */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Base Wrapper layout */
+.container {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Neo-Brutalist Structural Card Component */
+.card {
+    background: var(--card-bg);
+    border: 3px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--neo-shadow);
+    padding: 24px;
+}
+
+/* Left Column Styling */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.personal-icon-box {
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--accent-gray);
+    overflow: hidden;
+}
+
+.personal-icon-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebar-title {
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+    color: var(--border-color);
+}
+
+/* Infinite Art Scroll Containers */
+.art-scroller-box {
+    overflow: hidden;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+}
+
+.art-track-container {
+    overflow: hidden;
+    position: relative;
+    flex-grow: 1;
+    border-radius: 12px;
+    background: var(--accent-gray);
+}
+
+.art-track {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+}
+
+.art-item {
+    height: 140px;
+    background: #CBD5E1;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #64748B;
+    flex-shrink: 0;
+    overflow: hidden;
+    transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.art-item:hover {
+    transform: scale(1.02);
+    color: var(--text-main);
+}
+
+.art-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Right Content Structure */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* Typography Header Designs */
+.header-section {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+    color: var(--border-color);
+}
+
+.links-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.ig-link {
+    display: inline-block;
+    padding: 8px 24px;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    background: var(--card-bg);
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 3px 3px 0px var(--border-color);
+    transition: all 0.15s ease;
+}
+
+.ig-link:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--border-color);
+    background: var(--accent-gray);
+}
+
+/* Layout Headings */
+.section-heading {
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+}
+
+/* Interactive Circle Nodes */
+.icon-grid {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin: 12px 0;
+}
+
+.circle-icon-btn {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 3px solid var(--border-color);
+    background: var(--accent-gray);
+    box-shadow: 4px 4px 0px var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Snappy Pop-up feedback animation */
+.circle-icon-btn:hover {
+    transform: translate(-4px, -4px) scale(1.05);
+    box-shadow: 8px 8px 0px var(--border-color);
+    background: #E2E8F0;
+}
+
+.circle-icon-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Meet the Team Grid Configuration */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 10px 0;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.team-name-label {
+    margin-top: 14px;
+    padding: 6px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--accent-gray);
+    font-weight: 600;
+    font-size: 0.85rem;
+    min-width: 110px;
+    box-shadow: 3px 3px 0px var(--border-color);
+}
+
+.placeholder-text {
+    font-weight: 600; 
+    color: #94A3B8;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
