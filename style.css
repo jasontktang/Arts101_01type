@@ -1,14 +1,12 @@
-style.css
-
-/* Global variables for seamless theme modifications */
 :root {
-    --bg-color: #E2E8F0;        /* Sleek background gray */
-    --card-bg: #FFFFFF;         /* Pure white cards */
-    --accent-gray: #F1F5F9;     /* Light gray interior fill */
-    --border-color: #1E293B;    /* Sharp, dark framing lines */
-    --text-main: #0F172A;       /* Midnight dark font */
+    --bg-color: #E2E8F0;        /* Gray background */
+    --card-bg: #FFFFFF;         
+    --accent-gray: #F1F5F9;     
+    --border-color: #1E293B;    /* Crisp dark borders */
+    --text-main: #0F172A;       
+    --text-muted: #64748B;      
     --border-radius: 20px;
-    --neo-shadow: 6px 6px 0px #1E293B; /* Crisp signature depth shadow */
+    --neo-shadow: 6px 6px 0px #1E293B; /* Thick structural drop shadow */
 }
 
 * {
@@ -28,7 +26,6 @@ body {
     align-items: flex-start;
 }
 
-/* Base Wrapper layout */
 .container {
     display: grid;
     grid-template-columns: 320px 1fr;
@@ -37,20 +34,19 @@ body {
     max-width: 1200px;
 }
 
-/* Neo-Brutalist Structural Card Component */
 .card {
     background: var(--card-bg);
     border: 3px solid var(--border-color);
     border-radius: var(--border-radius);
     box-shadow: var(--neo-shadow);
     padding: 24px;
+    margin-bottom: 20px;
 }
 
-/* Left Column Styling */
 .sidebar {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
 }
 
 .personal-icon-box {
@@ -60,12 +56,10 @@ body {
     align-items: center;
     background: var(--accent-gray);
     overflow: hidden;
-}
-
-.personal-icon-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    position: relative;
+    border: 3px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--neo-shadow);
 }
 
 .sidebar-title {
@@ -77,7 +71,6 @@ body {
     color: var(--border-color);
 }
 
-/* Infinite Art Scroll Containers */
 .art-scroller-box {
     overflow: hidden;
     height: 480px;
@@ -109,35 +102,21 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    color: #64748B;
+    color: var(--text-muted);
     flex-shrink: 0;
     overflow: hidden;
-    transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 0.2s ease;
 }
 
-.art-item:hover {
-    transform: scale(1.02);
-    color: var(--text-main);
-}
+.art-item:hover { transform: scale(1.02); color: var(--text-main); }
 
-.art-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Right Content Structure */
 .main-content {
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 15px;
 }
 
-/* Typography Header Designs */
-.header-section {
-    text-align: center;
-    margin-bottom: 10px;
-}
+.header-section { text-align: center; margin-bottom: 15px; }
 
 .main-title {
     font-size: 3.5rem;
@@ -146,12 +125,9 @@ body {
     margin-bottom: 12px;
     color: var(--border-color);
 }
+.main-title a { text-decoration: none; color: inherit; }
 
-.links-row {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-}
+.links-row { display: flex; justify-content: center; gap: 16px; }
 
 .ig-link {
     display: inline-block;
@@ -173,23 +149,14 @@ body {
     background: var(--accent-gray);
 }
 
-/* Layout Headings */
 .section-heading {
     font-size: 1.6rem;
     font-weight: 800;
     text-align: center;
     margin-bottom: 24px;
-    letter-spacing: -0.01em;
 }
 
-/* Interactive Circle Nodes */
-.icon-grid {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    flex-wrap: wrap;
-    margin: 12px 0;
-}
+.icon-grid { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin: 12px 0; }
 
 .circle-icon-btn {
     width: 85px;
@@ -204,35 +171,20 @@ body {
     transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
     cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--text-main);
 }
 
-/* Snappy Pop-up feedback animation */
 .circle-icon-btn:hover {
     transform: translate(-4px, -4px) scale(1.05);
     box-shadow: 8px 8px 0px var(--border-color);
     background: #E2E8F0;
 }
 
-.circle-icon-btn img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 10px 0; }
 
-/* Meet the Team Grid Configuration */
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding: 10px 0;
-}
-
-.team-member {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
+.team-member { display: flex; flex-direction: column; align-items: center; text-align: center; }
 
 .team-name-label {
     margin-top: 14px;
@@ -246,9 +198,35 @@ body {
     box-shadow: 3px 3px 0px var(--border-color);
 }
 
-.placeholder-text {
-    font-weight: 600; 
-    color: #94A3B8;
-    font-size: 0.9rem;
-    letter-spacing: 0.05em;
+.placeholder-text { font-weight: 600; color: #94A3B8; font-size: 0.9rem; letter-spacing: 0.05em; }
+
+/* Subpage Specific Inner Styles */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 6px 14px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+    box-shadow: 3px 3px 0px var(--border-color);
+    transition: all 0.15s;
 }
+.back-link:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0px var(--border-color); }
+
+.detail-title { font-size: 2rem; font-weight: 800; margin-bottom: 16px; }
+
+.detail-meta { font-weight: 600; color: var(--text-muted); margin-bottom: 20px; }
+
+.detail-body { font-size: 1rem; line-height: 1.6; }
+
+.profile-card-header { display: flex; align-items: center; gap: 24px; margin-bottom: 24px; border-bottom: 2px dashed #CBD5E1; padding-bottom: 20px; }
+
+.profile-avatar-large { width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--border-color); background: var(--accent-gray); }
+
+.profile-title-info h2 { font-size: 2rem; font-weight: 800; }
+
+.profile-title-info p { font-weight: 600; color: var(--text-muted); }
