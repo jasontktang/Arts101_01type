@@ -17,87 +17,103 @@
             <span class="brand-text">Arts101.HK</span>
         </div>
         <div class="nav-social-links">
-            <a href=" " class="nav-link">Instagram 1</a>
-            <a href=" " class="nav-link">Instagram 2</a>
+            <a href="#" class="nav-link">Instagram 1</a>
+            <a href="#" class="nav-link">Instagram 2</a>
         </div>
     </header>
 
-    <div class="fixed-visual-viewport">
-        <div class="showcase-frame active" id="frame-1">
-            <div class="image-placeholder">EVENT 1 IMAGE</div>
-        </div>
-        <div class="showcase-frame" id="frame-2">
-            <div class="image-placeholder">EVENT 2 IMAGE</div>
-        </div>
-        <div class="showcase-frame" id="frame-3">
-            <div class="image-placeholder">EVENT 3 IMAGE</div>
-        </div>
-    </div>
-
-    <main class="scroll-narrative-container">
+    <main class="scroll-container">
         
-        <section class="narrative-section hero-slide" data-frame="1">
-            <div class="content-wrapper">
-                <h1 class="hero-title">Welcome to<br><span class="accent-text">Arts101.HK</span></h1>
-                <p class="hero-subtitle">Scroll down to explore upcoming events and meet our team.</p>
-                <div class="scroll-indicator">↓ Scroll to Discover</div>
+        <section class="split-row layout-normal">
+            <div class="split-half color-half">
+                <div class="centered-content">
+                    <h1 class="hero-title">Welcome to<br><span class="accent-text">Arts101.HK</span></h1>
+                    <p class="hero-subtitle">Scroll down to explore upcoming tracks and see our layout flip sides.</p>
+                    <div class="scroll-indicator">↓ Scroll to Reveal Content</div>
+                </div>
+            </div>
+            <div class="split-half picture-half">
+                <div class="art-canvas-frame" id="canvas-1">
+                    <span class="art-tag-label" id="label-1">Loading Artwork...</span>
+                </div>
             </div>
         </section>
 
-        <section class="narrative-section content-slide" data-frame="1">
-            <div class="content-wrapper card-reveal">
-                <span class="section-tag">Event 01</span>
-                <h2 class="slide-heading">Annual Gallery Exhibition 2026</h2>
-                <p class="slide-description">Our flagship exhibition gathers local underground visual artists under one roof, centering around physical-digital dualism.</p>
-                <a href="event1.html" class="action-btn">Explore Event Details →</a>
+        <section class="split-row layout-flipped">
+            <div class="split-half picture-half">
+                <div class="art-canvas-frame" id="canvas-2">
+                    <span class="art-tag-label" id="label-2">Loading Artwork...</span>
+                </div>
+            </div>
+            <div class="split-half color-half">
+                <div class="centered-content card-reveal reveal-on-scroll">
+                    <span class="section-tag">Event 01</span>
+                    <h2 class="slide-heading">Annual Gallery Exhibition 2026</h2>
+                    <p class="slide-description">Our flagship exhibition gathers local underground visual artists under one roof, centering around physical-digital dualism.</p>
+                    <a href="event1.html" class="action-btn">Explore Event Details →</a>
+                </div>
             </div>
         </section>
 
-        <section class="narrative-section content-slide" data-frame="2">
-            <div class="content-wrapper card-reveal">
-                <span class="section-tag">Event 02</span>
-                <h2 class="slide-heading">Live Figure Drawing Workshop</h2>
-                <p class="slide-description">An immersive, intensive single-session figure drawing lab structured around experimental dynamic human postures.</p>
-                <a href="event2.html" class="action-btn">Reserve a Spot →</a>
+        <section class="split-row layout-normal">
+            <div class="split-half color-half">
+                <div class="centered-content card-reveal reveal-on-scroll">
+                    <span class="section-tag">Event 02</span>
+                    <h2 class="slide-heading">Live Figure Drawing Workshop</h2>
+                    <p class="slide-description">An immersive, intensive single-session figure drawing lab structured around experimental dynamic human postures.</p>
+                    <a href="event2.html" class="action-btn">Reserve a Spot →</a>
+                </div>
+            </div>
+            <div class="split-half picture-half">
+                <div class="art-canvas-frame" id="canvas-3">
+                    <span class="art-tag-label" id="label-3">Loading Artwork...</span>
+                </div>
             </div>
         </section>
 
-        <section class="narrative-section content-slide" data-frame="3">
-            <div class="content-wrapper card-reveal">
-                <span class="section-tag">Event 03</span>
-                <h2 class="slide-heading">Independent Art Panel Talk</h2>
-                <p class="slide-description">Join an interactive cross-disciplinary panel session with emerging independent designers discussing fine art in multimedia.</p>
-                <a href="event3.html" class="action-btn">Join Stream →</a>
+        <section class="split-row layout-flipped">
+            <div class="split-half picture-half">
+                <div class="art-canvas-frame" id="canvas-4">
+                    <span class="art-tag-label" id="label-4">Loading Artwork...</span>
+                </div>
+            </div>
+            <div class="split-half color-half">
+                <div class="centered-content card-reveal reveal-on-scroll">
+                    <span class="section-tag">Event 03</span>
+                    <h2 class="slide-heading">Independent Art Panel Talk</h2>
+                    <p class="slide-description">Join an interactive cross-disciplinary panel session with emerging independent designers discussing fine art frameworks.</p>
+                    <a href="event3.html" class="action-btn">Join Stream →</a>
+                </div>
             </div>
         </section>
 
-        <section class="narrative-section team-slide" data-frame="3">
-            <div class="content-wrapper wide-wrapper">
-                <h2 class="slide-heading centered">Meet the Team</h2>
+        <section class="full-width-team-section">
+            <div class="team-center-wrapper reveal-on-scroll">
+                <h2 class="team-main-heading">Meet the Team</h2>
                 
-                <div class="team-grid">
-                    <a href="profile1.html" class="team-member-node">
-                        <div class="circle-avatar"><span>P1</span></div>
+                <div class="team-flex-grid">
+                    <a href="profile1.html" class="team-profile-card">
+                        <div class="circle-avatar">P1</div>
                         <div class="member-name">name1</div>
                     </a>
-                    <a href="profile2.html" class="team-member-node">
-                        <div class="circle-avatar"><span>P2</span></div>
+                    <a href="profile2.html" class="team-profile-card">
+                        <div class="circle-avatar">P2</div>
                         <div class="member-name">name2</div>
                     </a>
-                    <a href="profile3.html" class="team-member-node">
-                        <div class="circle-avatar"><span>P3</span></div>
+                    <a href="profile3.html" class="team-profile-card">
+                        <div class="circle-avatar">P3</div>
                         <div class="member-name">name3</div>
                     </a>
-                    <a href="profile4.html" class="team-member-node">
-                        <div class="circle-avatar"><span>P4</span></div>
+                    <a href="profile4.html" class="team-profile-card">
+                        <div class="circle-avatar">P4</div>
                         <div class="member-name">name4</div>
                     </a>
-                    <a href="profile5.html" class="team-member-node">
-                        <div class="circle-avatar"><span>P5</span></div>
+                    <a href="profile5.html" class="team-profile-card">
+                        <div class="circle-avatar">P5</div>
                         <div class="member-name">name5</div>
                     </a>
-                    <a href="profile6.html" class="team-member-node">
-                        <div class="circle-avatar"><span>P6</span></div>
+                    <a href="profile6.html" class="team-profile-card">
+                        <div class="circle-avatar">P6</div>
                         <div class="member-name">name6</div>
                     </a>
                 </div>
