@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-profile-body">
+<body class="profile-page-body">
 
     <!-- STICKY TOP HEADER -->
     <header class="main-header">
@@ -22,41 +22,60 @@
         </nav>
     </header>
 
-    <main class="detail-page-container">
+    <main class="profile-hero-section">
         
-        <!-- PROFILE HEADER CARD -->
-        <section class="profile-hero-card">
-            <div class="profile-large-avatar">P1</div>
-            <h1 class="detail-title">Artist Name</h1>
-            <p class="profile-role">Lead Illustrator & Concept Designer</p>
-            <p class="detail-subtitle" style="max-width: 600px; margin: 16px auto 0;">
-                Focusing on classical architectural structures, fluid pen doodles, and emotional character portraiture.
-            </p>
-            <div class="profile-socials">
-                <a href="#" class="profile-link">Instagram</a>
-                <a href="#" class="profile-link">Portfolio</a>
-            </div>
-        </section>
-
-        <!-- ARTIST WORKS SHOWCASE -->
-        <section class="gallery-section">
-            <h2 class="sub-heading" style="color: var(--text-main);">Selected Works</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="picture_red04.jpg" alt="Artist Work 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="picture_red05.jpg" alt="Artist Work 2">
+        <!-- MAIN PROFILE HERO CONTAINER (MATCHES REFERENCE IMAGE) -->
+        <div class="profile-content-container">
+            
+            <!-- LEFT: CIRCULAR AVATAR WITH DOUBLE RING -->
+            <div class="profile-avatar-wrapper">
+                <div class="profile-avatar-circle">
+                    <!-- Placeholder artwork inside avatar circle -->
+                    <img src="picture_red01.jpg" alt="Profile Avatar" class="avatar-img" onerror="this.style.display='none';">
                 </div>
             </div>
-        </section>
 
-        <!-- BACK BUTTON -->
-        <div style="text-align: center; margin-top: 60px;">
-            <a href="index.html" class="cta-button">← Back to Homepage</a>
+            <!-- RIGHT: BIO & DETAILS -->
+            <div class="profile-text-wrapper">
+                <span class="profile-role-tag">CREATIVE ILLUSTRATOR</span>
+                <h1 class="profile-name">I'M <span class="highlight-text">NAME 1</span></h1>
+                <p class="profile-bio">
+                    Exploring stream-of-consciousness sketches, classical architectural structures, and dynamic brushwork. Passionate about mixed media and digital concept art.
+                </p>
+
+                <!-- HORIZONTALLY SCROLLABLE ARTWORK CAROUSEL -->
+                <div class="profile-gallery-wrapper">
+                    <h3 class="gallery-label">FEATURED WORKS</h3>
+                    <div class="horizontal-scroll-container">
+                        <div class="scroll-item" onclick="openLightbox('picture_red01.jpg')">
+                            <img src="picture_red01.jpg" alt="Artwork 1">
+                        </div>
+                        <div class="scroll-item" onclick="openLightbox('picture_red02.jpg')">
+                            <img src="picture_red02.jpg" alt="Artwork 2">
+                        </div>
+                        <div class="scroll-item" onclick="openLightbox('picture_red03.jpg')">
+                            <img src="picture_red03.jpg" alt="Artwork 3">
+                        </div>
+                        <div class="scroll-item" onclick="openLightbox('picture_red04.jpg')">
+                            <img src="picture_red04.jpg" alt="Artwork 4">
+                        </div>
+                        <div class="scroll-item" onclick="openLightbox('picture_red05.jpg')">
+                            <img src="picture_red05.jpg" alt="Artwork 5">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
     </main>
+
+    <!-- FULLSCREEN MAGNIFY LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Magnified View">
+    </div>
 
     <script src="script.js"></script>
 </body>
