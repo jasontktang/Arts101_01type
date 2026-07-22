@@ -373,3 +373,34 @@ body {
         justify-content: center;
     }
 }
+/* INSTAGRAM SOCIAL LINK STYLING */
+.profile-social-container {
+    margin-bottom: 24px;
+}
+
+.instagram-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.instagram-chip:hover {
+    background: var(--brand-bg);
+    border-color: var(--brand-bg);
+    color: var(--text-dark);
+    transform: translateY(-2px);
+}
+
+.instagram-icon {
+    width: 16px;
+    height: 16px;
+}
