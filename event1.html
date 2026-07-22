@@ -3,34 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exhibition - Arts101.HK</title>
+    <title>Doodle & Concept Art - Arts101.HK</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <aside class="sidebar">
-            <div class="personal-icon-box"><span class="placeholder-text">YOUR ICON</span></div>
-            <div class="card art-scroller-box">
-                <div class="sidebar-title">Drawings</div>
-                <div class="art-track-container"><div class="art-track" id="artTrack"></div></div>
+    <!-- STICKY TOP HEADER -->
+    <header class="main-header">
+        <div class="logo-area">
+            <div class="profile-avatar">
+                <img src="icon.jpg" alt="Arts101 Logo" onerror="this.style.display='none';">
             </div>
-        </aside>
+            <a href="index.html" class="logo-text" style="text-decoration: none; color: inherit;">Arts101.HK</a>
+        </div>
+        <nav class="social-area">
+            <a href="index.html">← Back to Home</a>
+        </nav>
+    </header>
 
-        <main class="main-content">
-            <header class="header-section"><h1 class="main-title"><a href="index.html">Arts101.HK</a></h1></header>
-            <div class="back-btn-container"><a href="index.html" class="back-link">← Back to Main Hub</a></div>
+    <main class="detail-page-container">
+        
+        <!-- EVENT HERO SECTION -->
+        <section class="detail-hero">
+            <span class="tag">Collection 01</span>
+            <h1 class="detail-title">Doodle & Concept Art</h1>
+            <p class="detail-subtitle">
+                Exploring personal thoughts and stream-of-consciousness sketches through high-contrast ink line-work and mixed media.
+            </p>
+        </section>
 
-            <section class="card">
-                <h2 class="detail-title">Annual Gallery Exhibition 2026</h2>
-                <div class="detail-meta">Date: September 12, 2026 | Location: Central Hub, HK</div>
-                <div class="detail-body">
-                    <p>Our flagship exhibition returns this fall, gathering local underground visual artists under one roof. This year's curation centers around the concept of physical-digital dualism in layout design.</p>
+        <!-- EVENT METADATA & INFO -->
+        <section class="meta-grid">
+            <div class="meta-card">
+                <span class="meta-label">Medium</span>
+                <span class="meta-value">Ink & Digital Canvas</span>
+            </div>
+            <div class="meta-card">
+                <span class="meta-label">Curator / Lead</span>
+                <span class="meta-value">Arts101 Team</span>
+            </div>
+            <div class="meta-card">
+                <span class="meta-label">Exhibition Year</span>
+                <span class="meta-value">2026</span>
+            </div>
+        </section>
+
+        <!-- ARTWORK GALLERY GRID -->
+        <section class="gallery-section">
+            <h2 class="sub-heading">Featured Artworks</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="picture_red01.jpg" alt="Artwork 1">
+                    <div class="gallery-caption">Structure Study I</div>
                 </div>
-            </section>
-        </main>
-    </div>
+                <div class="gallery-item">
+                    <img src="picture_red02.jpg" alt="Artwork 2">
+                    <div class="gallery-caption">Line Work Concept</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="picture_red03.jpg" alt="Artwork 3">
+                    <div class="gallery-caption">Perspective Sketch</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BACK TO HOME BUTTON -->
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="index.html" class="cta-button">← Back to Main Exhibition</a>
+        </div>
+
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>

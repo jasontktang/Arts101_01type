@@ -3,43 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile: name1 - Arts101.HK</title>
+    <title>Member Profile - Arts101.HK</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-profile-body">
 
-    <div class="container">
-        <aside class="sidebar">
-            <div class="personal-icon-box"><span class="placeholder-text">YOUR ICON</span></div>
-            <div class="card art-scroller-box">
-                <div class="sidebar-title">Drawings</div>
-                <div class="art-track-container"><div class="art-track" id="artTrack"></div></div>
+    <!-- STICKY TOP HEADER -->
+    <header class="main-header">
+        <div class="logo-area">
+            <div class="profile-avatar">
+                <img src="icon.jpg" alt="Arts101 Logo" onerror="this.style.display='none';">
             </div>
-        </aside>
+            <a href="index.html" class="logo-text" style="text-decoration: none; color: inherit;">Arts101.HK</a>
+        </div>
+        <nav class="social-area">
+            <a href="index.html" style="color: var(--text-main);">← Back to Team</a>
+        </nav>
+    </header>
 
-        <main class="main-content">
-            <header class="header-section"><h1 class="main-title"><a href="index.html">Arts101.HK</a></h1></header>
-            <div class="back-btn-container"><a href="index.html" class="back-link">← Back to Main Hub</a></div>
+    <main class="detail-page-container">
+        
+        <!-- PROFILE HEADER CARD -->
+        <section class="profile-hero-card">
+            <div class="profile-large-avatar">P1</div>
+            <h1 class="detail-title">Artist Name</h1>
+            <p class="profile-role">Lead Illustrator & Concept Designer</p>
+            <p class="detail-subtitle" style="max-width: 600px; margin: 16px auto 0;">
+                Focusing on classical architectural structures, fluid pen doodles, and emotional character portraiture.
+            </p>
+            <div class="profile-socials">
+                <a href="#" class="profile-link">Instagram</a>
+                <a href="#" class="profile-link">Portfolio</a>
+            </div>
+        </section>
 
-            <section class="card">
-                <div class="profile-card-header">
-                    <div class="profile-avatar-large"></div>
-                    <div class="profile-title-info">
-                        <h2>name1</h2>
-                        <p>Lead Coordinator / Artist Guild 1</p>
-                    </div>
+        <!-- ARTIST WORKS SHOWCASE -->
+        <section class="gallery-section">
+            <h2 class="sub-heading" style="color: var(--text-main);">Selected Works</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="picture_red04.jpg" alt="Artist Work 1">
                 </div>
-                <div class="detail-body">
-                    <p>Team member name1 specializes in creative spatial layouts, asset tracking, and curating modern independent visual showcases. They manage workflow pipelines across local creative networks.</p>
+                <div class="gallery-item">
+                    <img src="picture_red05.jpg" alt="Artist Work 2">
                 </div>
-                <div class="social-links">
-                    <a href="" class="ig-link">Portfolio</a>
-                    <a href="" class="ig-link">Contact</a>
-                </div>
-            </section>
-        </main>
-    </div>
+            </div>
+        </section>
+
+        <!-- BACK BUTTON -->
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="index.html" class="cta-button">← Back to Homepage</a>
+        </div>
+
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>
