@@ -1,8 +1,8 @@
 :root {
-    --brand-bg: #FFA38C;       /* Matches your logo background perfectly */
-    --text-main: #FFFFFF;      /* Clean crisp white text */
-    --text-dark: #4E1414;      /* Deep burgundy contrast color for solid legibility */
-    --accent: #B82525;         /* Red accent string sampled from your logo brush details */
+    --brand-bg: #FFA38C;
+    --text-main: #FFFFFF;
+    --text-dark: #4E1414;
+    --accent: #B82525;
 }
 
 * {
@@ -10,6 +10,10 @@
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -51,6 +55,7 @@ body {
     display: flex;
     position: relative;
     background-color: var(--brand-bg);
+    will-change: transform;
 }
 
 .flip-normal { flex-direction: row; }
@@ -71,18 +76,32 @@ body {
     z-index: 5;
 }
 
-/* IMAGE CONTAINER WITH FEATHERED EDGE MASKING */
+/* FAST GRADIENT OVERLAY (NO HEAVY CSS FILTERS) */
 .image-pane {
     background-size: contain; 
     background-position: center center; 
     background-repeat: no-repeat;
     z-index: 1;
-
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    position: relative;
 }
 
-/* TEXT BOX PRESENTATION TYPOGRAPHY */
+.image-pane::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(to right, 
+        var(--brand-bg) 0%, 
+        transparent 15%, 
+        transparent 85%, 
+        var(--brand-bg) 100%
+    );
+}
+
+/* TYPOGRAPHY STYLING */
 .text-box {
     width: 100%;
     max-width: 440px;
@@ -104,19 +123,23 @@ body {
     font-weight: 700;
     font-size: 0.9rem;
     border-radius: 30px;
-    transition: background 0.2s, transform 0.2s;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 .cta-button:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
 
-/* IN-PLACE FADE SCROLL INTERSECTION CONFIGURATIONS */
+/* LIGHTWEIGHT SCROLL ANIMATIONS */
 .fade-in-initially { opacity: 1; }
 
 .scroll-reveal {
     opacity: 0;
-    transition: opacity 1s ease-out;
-    will-change: opacity;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
 }
-.scroll-reveal.active { opacity: 1; }
+.scroll-reveal.active { 
+    opacity: 1; 
+    transform: translateY(0);
+}
 
 /* MEET THE TEAM LAYOUT SYSTEM */
 .team-section {
@@ -146,168 +169,34 @@ body {
     padding: 40px 30px;
     border-radius: 16px;
     transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    cursor: pointer;
 }
 .member-card:hover { border-color: var(--brand-bg); background: rgba(255, 255, 255, 0.07); transform: translateY(-4px); }
 
-.avatar-circle { width: 80px; height: 80px; border-radius: 50%; background: var(--brand-bg); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; margin-bottom: 16px; color: var(--text-main); }
+.avatar-circle { 
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    background: var(--brand-bg); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-weight: 800; 
+    font-size: 1.2rem; 
+    margin-bottom: 16px; 
+    color: var(--text-main); 
+    transition: transform 0.2s;
+}
+.member-card:hover .avatar-circle { transform: scale(1.05); }
+
 .member-name { font-weight: 600; color: #94A3B8; transition: color 0.2s; }
 .member-card:hover .member-name { color: var(--text-main); }
-
-/* --- DETAIL & PROFILE PAGES STYLES --- */
-.dark-profile-body {
-    background-color: var(--text-dark);
-}
-
-.detail-page-container {
-    padding: 140px 40px 80px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.detail-hero {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.detail-title {
-    font-size: 3rem;
-    font-weight: 800;
-    margin: 10px 0;
-    color: var(--text-main);
-}
-
-.detail-subtitle {
-    font-size: 1.15rem;
-    color: var(--text-dark);
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.dark-profile-body .detail-subtitle {
-    color: #94A3B8;
-}
-
-.meta-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 60px;
-}
-
-.meta-card {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.meta-label {
-    font-size: 0.8rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: var(--text-dark);
-    letter-spacing: 0.05em;
-}
-
-.meta-value {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--text-main);
-}
-
-.gallery-section {
-    margin-top: 40px;
-}
-
-.sub-heading {
-    font-size: 1.8rem;
-    font-weight: 800;
-    margin-bottom: 30px;
-    color: var(--text-dark);
-    text-align: center;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.gallery-item {
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    display: block;
-}
-
-.gallery-caption {
-    padding: 16px;
-    text-align: center;
-    font-weight: 600;
-    color: var(--text-dark);
-}
-
-/* PROFILE HERO */
-.profile-hero-card {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.profile-large-avatar {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    background: var(--brand-bg);
-    color: var(--text-main);
-    font-size: 2.2rem;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    border: 3px solid var(--text-main);
-}
-
-.profile-role {
-    color: var(--brand-bg);
-    font-weight: 700;
-    font-size: 1.1rem;
-}
-
-.profile-socials {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.profile-link {
-    color: var(--brand-bg);
-    text-decoration: none;
-    font-weight: 700;
-}
 
 /* MOBILE RESPONSIVE MEDIA WRAPPERS */
 @media(max-width: 768px) {
     .split-section { flex-direction: column !important; height: auto; }
     .pane { width: 100%; height: 50vh; }
-    .image-pane { 
-        background-position: center center; 
-        -webkit-mask-image: none; 
-        mask-image: none; 
-    }
+    .image-pane::after { display: none; }
     .color-pane { padding: 60px 20px; }
     .team-grid { grid-template-columns: repeat(2, 1fr); }
-    .meta-grid { grid-template-columns: 1fr; }
 }
