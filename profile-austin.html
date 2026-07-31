@@ -3,25 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Austin - Member of ARTS101</title>
-  <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: rgba(0,0,0,0.8); color: #fff; padding: 20px 40px; position: absolute; width: 100%; box-sizing: border-box; z-index: 10; }
-    header h1 a { color: #fff; text-decoration: none; font-size: 24px; }
-    .profile-banner { height: 350px; background: linear-gradient(135deg, #4b6cb7, #182848); position: relative; }
-    .profile-container { max-width: 800px; margin: -80px auto 40px; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); position: relative; text-align: center; }
-    .avatar { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; margin-top: -100px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-    h2 { margin: 15px 0 5px; font-size: 28px; }
-    .role { color: #777; font-weight: 600; font-size: 16px; margin-bottom: 20px; }
-  </style>
+  <title>Austin - ARTS101 Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header><h1><a href="index.html">ARTS101</a></h1></header>
-  <div class="profile-banner"></div>
-  <div class="profile-container">
-    <img src="Austin_profile.jpg" alt="Austin" class="avatar">
-    <h2>Austin</h2>
+
+  <header>
+    <a href="index.html" class="brand-logo">
+      <span class="base-text">Arts_101</span>
+      <span class="overlay-text">Arts_101</span>
+    </a>
+    <a href="https://www.instagram.com/arts101hk?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="insta-link">
+      <i class="fa-brands fa-instagram"></i> click me!
+    </a>
+  </header>
+
+  <div class="profile-hero" style="background-image: linear-gradient(rgba(180, 24, 45, 0.5), #B4182D), url('Austin_profile.jpg');"></div>
+
+  <div class="profile-content">
+    <img src="Austin_profile.jpg" alt="Austin Profile" class="avatar">
+    <h1>Austin</h1>
     <p class="role">Member of ARTS101</p>
+
+    <div class="gallery-title">Artworks</div>
+    <p style="opacity: 0.8; text-align: left;">Artworks coming soon.</p>
   </div>
+
+  <footer>
+    <p>&copy; ARTS101. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

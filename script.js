@@ -1,60 +1,80 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --------------------------------------------------------------------------
+    // 1. Dynamic Logo Overlay Inset Adjustment on Scroll
+    // --------------------------------------------------------------------------
+    const overlayText = document.querySelector('.brand-logo .overlay-text');
     
-    const imagesPool = [
-        "picture_red01.jpg",
-        "picture_red02.jpg",
-        "picture_red03.jpg",
-        "picture_red04.jpg",
-        "picture_red05.jpg"
-    ];
-
-    function getShuffledImages(count) {
-        let shuffled = [...imagesPool].sort(() => 0.5 - Math.random());
-        return shuffled.slice(0, count);
-    }
-
-    const targetPanes = document.querySelectorAll(".image-pane");
-    if (targetPanes.length > 0) {
-        const assignedImages = getShuffledImages(targetPanes.length);
-        targetPanes.forEach((pane, index) => {
-            if (assignedImages[index]) {
-                pane.style.backgroundImage = `url('${assignedImages[index]}')`;
-            }
+    window.addEventListener('scroll', () => {
+      // Subtle shift effect for overlay text while scrolling
+      const scrollPercentage = Math.min(window.scrollY / 500, 1);
+      const clipVal = 35 + (scrollPercentage * 15);
+      if (overlayText) {
+        overlayText.style.clipPath = `inset(0 0 0 ${clipVal}%)`;
+      }
+    });
+  
+    // --------------------------------------------------------------------------
+    // 2. Smooth Scroll Animation Observer for Split Sections & Galleries
+    // --------------------------------------------------------------------------
+    const observerOptions = {
+      threshold: 0.15
+    };
+  
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+  
+    // Apply scroll reveal styling to section cards and hero texts
+    const elementsToAnimate = document.querySelectorAll('.hero-text, .team-card, .event-card, .artist-section');
+    elementsToAnimate.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+      revealObserver.observe(el);
+    });
+  
+    // --------------------------------------------------------------------------
+    // 3. Simple Image Lightbox Effect for Artwork Galleries
+    // --------------------------------------------------------------------------
+    const galleryImages = document.querySelectorAll('.gallery-grid img');
+    
+    if (galleryImages.length > 0) {
+      // Create Lightbox Container
+      const lightbox = document.createElement('div');
+      lightbox.id = 'lightbox';
+      lightbox.style.cssText = `
+        position: fixed;
+        top: 0; left: 0; width: 100vw; height: 100vh;
+        background: rgba(0, 0, 0, 0.9);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        cursor: pointer;
+      `;
+      
+      const lightboxImg = document.createElement('img');
+      lightboxImg.style.cssText = 'max-width: 90%; max-height: 90%; border-radius: 8px; box-shadow: 0 0 20px rgba(255,255,255,0.2);';
+      lightbox.appendChild(lightboxImg);
+      document.body.appendChild(lightbox);
+  
+      galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+          lightboxImg.src = img.src;
+          lightbox.style.display = 'flex';
         });
+      });
+  
+      lightbox.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+      });
     }
-
-    // SCROLL REVEAL OBSERVER
-    const revealItems = document.querySelectorAll(".scroll-reveal");
-    if (revealItems.length > 0) {
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("active");
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: "0px 0px -20px 0px"
-        });
-
-        revealItems.forEach(item => revealObserver.observe(item));
-    }
-});
-
-/* LIGHTBOX MODAL FUNCTIONS */
-function openLightbox(imageSrc) {
-    const modal = document.getElementById("lightbox");
-    const modalImg = document.getElementById("lightbox-img");
-    if (modal && modalImg) {
-        modal.style.display = "flex";
-        modalImg.src = imageSrc;
-    }
-}
-
-function closeLightbox() {
-    const modal = document.getElementById("lightbox");
-    if (modal) {
-        modal.style.display = "none";
-    }
-}
+  
+  });

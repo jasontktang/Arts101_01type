@@ -3,55 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event 1: Arts to Joy - ARTS101</title>
+  <title>Event 1 - ARTS101</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #111; color: #fff; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
-    header h1 a { color: #fff; text-decoration: none; font-size: 24px; letter-spacing: 2px; }
-    nav a { color: #ccc; margin-left: 20px; text-decoration: none; }
-    .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-    .event-header { text-align: center; margin-bottom: 40px; }
-    .event-header h2 { font-size: 32px; margin-bottom: 10px; }
-    .event-header p { color: #666; font-size: 16px; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-    .gallery-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    .gallery-card img { width: 100%; height: 220px; object-fit: cover; }
-    .gallery-card p { padding: 12px; margin: 0; font-size: 14px; text-align: center; color: #555; }
-    .back-btn { display: inline-block; margin-bottom: 20px; color: #111; text-decoration: none; font-weight: bold; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #B4182D; color: #fff; }
+
+    header { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; z-index: 100; mix-blend-mode: difference; }
+    .brand-logo { position: relative; font-size: 28px; font-weight: 900; letter-spacing: 2px; text-decoration: none; text-transform: uppercase; }
+    .brand-logo .base-text { color: #000; }
+    .brand-logo .overlay-text { position: absolute; top: 0; left: 0; color: #fff; clip-path: inset(0 0 0 35%); }
+
+    .insta-link { display: flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; font-weight: 700; font-size: 14px; text-transform: uppercase; background: rgba(0,0,0,0.3); padding: 8px 16px; border-radius: 20px; transition: background 0.3s; }
+    .insta-link:hover { background: #fff; color: #B4182D; }
+
+    .container { max-width: 1100px; margin: 120px auto 60px; padding: 0 40px; }
+    .back-btn { display: inline-block; color: #fff; text-decoration: none; font-weight: bold; margin-bottom: 20px; text-transform: uppercase; }
+    h1 { font-size: 48px; font-weight: 900; margin-bottom: 10px; text-transform: uppercase; }
+    p.subtitle { font-size: 20px; opacity: 0.8; margin-bottom: 40px; }
+
+    .event-photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .photo-card { background: rgba(0,0,0,0.2); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+    .photo-card img { width: 100%; height: 260px; object-fit: cover; }
+    .photo-card p { padding: 15px; text-align: center; font-size: 14px; opacity: 0.9; }
   </style>
 </head>
 <body>
 
   <header>
-    <h1><a href="index.html">ARTS101</a></h1>
-    <nav><a href="index.html">Back to Home</a></nav>
+    <a href="index.html" class="brand-logo">
+      <span class="base-text">Arts_101</span>
+      <span class="overlay-text">Arts_101</span>
+    </a>
+    <a href="https://www.instagram.com/arts101hk?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="insta-link">
+      <i class="fa-brands fa-instagram"></i> click me!
+    </a>
   </header>
 
   <div class="container">
     <a href="index.html" class="back-btn">&larr; Back to Home</a>
-    
-    <div class="event-header">
-      <h2>Arts to Joy: Christmas Cards Workshop</h2>
-      <p>Organized by ARTS101 & HKAGE</p>
-    </div>
+    <h1>Arts to Joy - Christmas Cards Workshop</h1>
+    <p class="subtitle">Organized by ARTS101 & HKAGE</p>
 
-    <div class="gallery-grid">
-      <div class="gallery-card">
-        <img src="event1_arts101.jpg" alt="Group Photo Workshop">
-        <p>Group photo of students and instructors</p>
-      </div>
-      <div class="gallery-card">
-        <img src="event2_arts101.jpg" alt="Colored Pencil Practice">
-        <p>Hands-on table practice with colored pencils</p>
-      </div>
-      <div class="gallery-card">
-        <img src="event3_arts101.jpg" alt="Color Theory Lecture">
-        <p>Presentation explaining color theory</p>
-      </div>
-      <div class="gallery-card">
-        <img src="event4_arts101.jpg" alt="Whiteboard Logo Drawing">
-        <p>Instructor drawing the ARTS101 logo</p>
-      </div>
+    <div class="event-photos">
+      <div class="photo-card"><img src="event1_arts101.jpg" alt="Event 1"><p>Group Photo with Students and Instructors</p></div>
+      <div class="photo-card"><img src="event2_arts101.jpg" alt="Event 2"><p>Hands-on Pencil Drawing Workshop</p></div>
+      <div class="photo-card"><img src="event3_arts101.jpg" alt="Event 3"><p>Color Theory Lecture</p></div>
+      <div class="photo-card"><img src="event4_arts101.jpg" alt="Event 4"><p>Whiteboard Logo Sketching</p></div>
     </div>
   </div>
 
