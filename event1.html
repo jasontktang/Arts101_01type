@@ -1,80 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doodle & Concept Art - Arts101.HK</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event 1: Arts to Joy - ARTS101</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #111; color: #fff; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+    header h1 a { color: #fff; text-decoration: none; font-size: 24px; letter-spacing: 2px; }
+    nav a { color: #ccc; margin-left: 20px; text-decoration: none; }
+    .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+    .event-header { text-align: center; margin-bottom: 40px; }
+    .event-header h2 { font-size: 32px; margin-bottom: 10px; }
+    .event-header p { color: #666; font-size: 16px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .gallery-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .gallery-card img { width: 100%; height: 220px; object-fit: cover; }
+    .gallery-card p { padding: 12px; margin: 0; font-size: 14px; text-align: center; color: #555; }
+    .back-btn { display: inline-block; margin-bottom: 20px; color: #111; text-decoration: none; font-weight: bold; }
+  </style>
 </head>
 <body>
 
-    <!-- STICKY TOP HEADER -->
-    <header class="main-header">
-        <div class="logo-area">
-            <div class="profile-avatar">
-                <img src="icon.jpg" alt="Arts101 Logo" onerror="this.style.display='none';">
-            </div>
-            <a href="index.html" class="logo-text" style="text-decoration: none; color: inherit;">Arts101.HK</a>
-        </div>
-        <nav class="social-area">
-            <a href="index.html">← Back to Home</a>
-        </nav>
-    </header>
+  <header>
+    <h1><a href="index.html">ARTS101</a></h1>
+    <nav><a href="index.html">Back to Home</a></nav>
+  </header>
 
-    <main class="detail-page-container">
-        
-        <!-- EVENT HERO SECTION -->
-        <section class="detail-hero">
-            <span class="tag">Collection 01</span>
-            <h1 class="detail-title">Doodle & Concept Art</h1>
-            <p class="detail-subtitle">
-                Exploring personal thoughts and stream-of-consciousness sketches through high-contrast ink line-work and mixed media.
-            </p>
-        </section>
+  <div class="container">
+    <a href="index.html" class="back-btn">&larr; Back to Home</a>
+    
+    <div class="event-header">
+      <h2>Arts to Joy: Christmas Cards Workshop</h2>
+      <p>Organized by ARTS101 & HKAGE</p>
+    </div>
 
-        <!-- EVENT METADATA & INFO -->
-        <section class="meta-grid">
-            <div class="meta-card">
-                <span class="meta-label">Medium</span>
-                <span class="meta-value">Ink & Digital Canvas</span>
-            </div>
-            <div class="meta-card">
-                <span class="meta-label">Curator / Lead</span>
-                <span class="meta-value">Arts101 Team</span>
-            </div>
-            <div class="meta-card">
-                <span class="meta-label">Exhibition Year</span>
-                <span class="meta-value">2026</span>
-            </div>
-        </section>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="event1_arts101.jpg" alt="Group Photo Workshop">
+        <p>Group photo of students and instructors</p>
+      </div>
+      <div class="gallery-card">
+        <img src="event2_arts101.jpg" alt="Colored Pencil Practice">
+        <p>Hands-on table practice with colored pencils</p>
+      </div>
+      <div class="gallery-card">
+        <img src="event3_arts101.jpg" alt="Color Theory Lecture">
+        <p>Presentation explaining color theory</p>
+      </div>
+      <div class="gallery-card">
+        <img src="event4_arts101.jpg" alt="Whiteboard Logo Drawing">
+        <p>Instructor drawing the ARTS101 logo</p>
+      </div>
+    </div>
+  </div>
 
-        <!-- ARTWORK GALLERY GRID -->
-        <section class="gallery-section">
-            <h2 class="sub-heading">Featured Artworks</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="picture_red01.jpg" alt="Artwork 1">
-                    <div class="gallery-caption">Structure Study I</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="picture_red02.jpg" alt="Artwork 2">
-                    <div class="gallery-caption">Line Work Concept</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="picture_red03.jpg" alt="Artwork 3">
-                    <div class="gallery-caption">Perspective Sketch</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- BACK TO HOME BUTTON -->
-        <div style="text-align: center; margin-top: 60px;">
-            <a href="index.html" class="cta-button">← Back to Main Exhibition</a>
-        </div>
-
-    </main>
-
-    <script src="script.js"></script>
 </body>
 </html>

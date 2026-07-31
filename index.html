@@ -1,103 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arts101.HK</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARTS101 - Home</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #111; color: #fff; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { margin: 0; font-size: 24px; letter-spacing: 2px; }
+    nav a { color: #ccc; margin-left: 20px; text-decoration: none; font-weight: 500; }
+    nav a:hover { color: #fff; }
+    .hero { background: #222; color: #fff; padding: 80px 40px; text-align: center; }
+    .hero h2 { font-size: 40px; margin-bottom: 10px; }
+    section { padding: 50px 40px; max-width: 1200px; margin: 0 auto; }
+    h2.section-title { font-size: 28px; border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-bottom: 30px; }
+    
+    /* Team Grid */
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
+    .team-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center; padding-bottom: 20px; transition: transform 0.2s; text-decoration: none; color: inherit; }
+    .team-card:hover { transform: translateY(-5px); }
+    .team-card img { width: 100%; height: 220px; object-fit: cover; }
+    .team-card h3 { margin: 15px 0 5px; font-size: 20px; }
+    .team-card p { margin: 0; color: #777; font-size: 14px; }
+    
+    /* Artworks Grid */
+    .artist-section { margin-bottom: 40px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; }
+    .gallery-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    
+    /* Events Grid */
+    .events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .event-card { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .event-card a { text-decoration: none; color: #111; font-weight: bold; }
+    .event-card.upcoming { background: #eee; color: #888; border: 2px dashed #ccc; }
+    
+    footer { text-align: center; padding: 30px; background: #111; color: #777; font-size: 14px; margin-top: 60px; }
+  </style>
 </head>
 <body>
 
-    <!-- STICKY TOP HEADER -->
-    <header class="main-header">
-        <div class="logo-area">
-            <div class="profile-avatar">
-                <img src="icon.jpg" alt="Arts101 Logo" onerror="this.style.display='none';">
-            </div>
-            <span class="logo-text">Arts101.HK</span>
+  <header>
+    <h1>ARTS101</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#meet-the-team">Team</a>
+      <a href="#artworks">Artworks</a>
+      <a href="#events">Events</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Welcome to ARTS101</h2>
+    <p>Exploring Creativity, Artistry, and Expression</p>
+  </div>
+
+  <!-- MEET THE TEAM -->
+  <section id="meet-the-team">
+    <h2 class="section-title">Meet the Team</h2>
+    <div class="team-grid">
+      
+      <a href="profile-jay.html" class="team-card">
+        <img src="Jay_profile.jpg" alt="Jay">
+        <h3>Jay</h3>
+        <p>Founder of ARTS101</p>
+      </a>
+
+      <a href="profile-cody.html" class="team-card">
+        <img src="Cody_profile.jpg" alt="Cody Ng">
+        <h3>Cody Ng</h3>
+        <p>Co-founder of ARTS101</p>
+      </a>
+
+      <a href="profile-morgan.html" class="team-card">
+        <img src="Morgan_profile.jpg" alt="Morgan">
+        <h3>Morgan</h3>
+        <p>Manager of ARTS101</p>
+      </a>
+
+      <a href="profile-glacier.html" class="team-card">
+        <img src="Glacier_profile.jpg" alt="Glacier Tsoi">
+        <h3>Glacier Tsoi</h3>
+        <p>Creative Director of ARTS101</p>
+      </a>
+
+      <a href="profile-austin.html" class="team-card">
+        <img src="Austin_profile.jpg" alt="Austin">
+        <h3>Austin</h3>
+        <p>Member of ARTS101</p>
+      </a>
+
+      <a href="profile-selina.html" class="team-card">
+        <img src="Selina_profile.jpg" alt="Selina">
+        <h3>Selina</h3>
+        <p>Member of ARTS101</p>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- TEAM ARTWORKS -->
+  <section id="artworks">
+    <h2 class="section-title">Team Artworks</h2>
+
+    <div class="artist-section">
+      <h3>Jay's Artworks</h3>
+      <div class="gallery-grid">
+        <img src="Jay1_arts101.jpg" alt="Lion Door Knocker Painting">
+        <img src="Jay2_arts101.jpg" alt="Sagrada Familia Pen Sketch">
+        <img src="Jay3_arts101.jpg" alt="Metropolis Building Pencil Drawing">
+        <img src="Jay4_arts101.jpg" alt="Urban Map Calendar Collage">
+        <img src="picture_red03.jpg" alt="Leaning Clock Towers Mixed Media">
+      </div>
+    </div>
+
+    <div class="artist-section">
+      <h3>Cody's Artworks</h3>
+      <div class="gallery-grid">
+        <img src="Cody2_arts101.jpg" alt="Father and Child Painting">
+        <img src="Cody3_arts101.jpg" alt="Rats and Donuts Surreal Painting">
+        <img src="Cody4_arts101.jpg" alt="Mother and Child Sand Painting">
+        <img src="Cody5_arts101.jpg" alt="Hong Kong Street Market Painting">
+        <img src="picture_red04.jpg" alt="Emotive Self Portrait with Orb">
+      </div>
+    </div>
+
+    <div class="artist-section">
+        <h3>Morgan's Artworks</h3>
+        <div class="gallery-grid">
+          <img src="Morgan_arts101_2.jpg" alt="Morgan Red String Painting">
+          <img src="Morgan2_arts101_2.jpg" alt="Morgan Blue Floral Vase Sculpture">
+          <img src="Morgan4_arts101_2.jpg" alt="Morgan Elephant Cutout Art">
+          <img src="picture_red02_2.jpg" alt="Morgan Walnut Shell Study">
         </div>
-        <nav class="social-area">
-            <a href="#">Instagram 1</a>
-            <a href="#">Instagram 2</a>
-        </nav>
-    </header>
+    </div>
 
-    <main class="content-wrapper">
-        
-        <!-- SECTION 1: TEXT LEFT, ARTWORK RIGHT -->
-        <section class="split-section flip-normal">
-            <div class="pane color-pane">
-                <div class="text-box fade-in-initially">
-                    <h1 class="main-title">Welcome to Arts101.HK</h1>
-                    <p class="sub-title">Scroll down to explore curated student illustrations with smooth edge transitions.</p>
-                </div>
-            </div>
-            <div class="pane image-pane" id="img-pane-1"></div>
-        </section>
+    <div class="artist-section">
+        <h3>Glacier's Artworks</h3>
+        <div class="gallery-grid">
+          <img src="picture_red07_2.jpg" alt="Glacier Perfume Bottle Blue Doodle">
+          <img src="picture_red01_2.jpg" alt="Glacier Handcuffs Red Doodle">
+          <img src="Glacier3_arts101_2.jpg" alt="Glacier Alien Green Doodle">
+          <img src="Glacier4_arts101_2.jpg" alt="Glacier Duck Float Away Yellow Doodle">
+        </div>
+    </div>
 
-        <!-- SECTION 2: ARTWORK LEFT, TEXT RIGHT -->
-        <section class="split-section flip-reverse">
-            <div class="pane color-pane">
-                <div class="text-box scroll-reveal">
-                    <span class="tag">Collection 01</span>
-                    <h2 class="section-title">Doodle & Concept Art</h2>
-                    <p class="section-desc">Exploring personal thoughts and stream-of-consciousness sketches through high-contrast ink line-work.</p>
-                    <a href="event1.html" class="cta-button">View Details →</a>
-                </div>
-            </div>
-            <div class="pane image-pane" id="img-pane-2"></div>
-        </section>
+    <div class="artist-section">
+      <h3>Selina's Artworks</h3>
+      <div class="gallery-grid">
+        <img src="picture_red05.jpg" alt="Dome Building Architectural Painting">
+        <img src="Selina1_arts101.jpg" alt="Surreal Landscape Fork Path">
+        <img src="Selina2_arts101.jpg" alt="Blooming Tree in a Box">
+        <img src="Selina3_arts101.jpg" alt="Radcliffe Camera Pencil Sketch">
+      </div>
+    </div>
+  </section>
 
-        <!-- SECTION 3: TEXT LEFT, ARTWORK RIGHT -->
-        <section class="split-section flip-normal">
-            <div class="pane color-pane">
-                <div class="text-box scroll-reveal">
-                    <span class="tag">Collection 02</span>
-                    <h2 class="section-title">Architectural Form</h2>
-                    <p class="section-desc">A deep dive into classical structural layouts, dramatic perspectives, and mixed media collage painting.</p>
-                    <a href="event2.html" class="cta-button">View Details →</a>
-                </div>
-            </div>
-            <div class="pane image-pane" id="img-pane-3"></div>
-        </section>
 
-        <!-- SECTION 4: MEET THE TEAM -->
-        <section class="team-section">
-            <div class="team-container scroll-reveal">
-                <h2 class="team-heading">Meet the Team</h2>
-                
-                <div class="team-grid">
-                    <a href="profile1.html" class="member-card">
-                        <div class="avatar-circle">P1</div>
-                        <span class="member-name">name1</span>
-                    </a>
-                    <a href="profile2.html" class="member-card">
-                        <div class="avatar-circle">P2</div>
-                        <span class="member-name">name2</span>
-                    </a>
-                    <a href="profile3.html" class="member-card">
-                        <div class="avatar-circle">P3</div>
-                        <span class="member-name">name3</span>
-                    </a>
-                    <a href="profile4.html" class="member-card">
-                        <div class="avatar-circle">P4</div>
-                        <span class="member-name">name4</span>
-                    </a>
-                    <a href="profile5.html" class="member-card">
-                        <div class="avatar-circle">P5</div>
-                        <span class="member-name">name5</span>
-                    </a>
-                    <a href="profile6.html" class="member-card">
-                        <div class="avatar-circle">P6</div>
-                        <span class="member-name">name6</span>
-                    </a>
-                </div>
-            </div>
-        </section>
+  <!-- EVENTS SECTION -->
+  <section id="events">
+    <h2 class="section-title">Events</h2>
+    <div class="events-grid">
+      
+      <div class="event-card">
+        <h3><a href="event1.html">Event 1: Arts to Joy - Christmas Cards Workshop</a></h3>
+        <p>A joint workshop by ARTS101 & HKAGE focusing on creative card design and color theory.</p>
+      </div>
 
-    </main>
+      <div class="event-card upcoming">
+        <h3>Event 2</h3>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="event-card upcoming">
+        <h3>Event 3</h3>
+      </div>
+
+      <div class="event-card upcoming">
+        <h3>Event 4</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; ARTS101. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
