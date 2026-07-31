@@ -5,7 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARTS101 - Home</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #B4182D; color: #fff; overflow-x: hidden; line-height: 1.5; }
+
+    header { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; z-index: 100; mix-blend-mode: difference; }
+    
+    .brand-logo { position: relative; font-size: 28px; font-weight: 900; letter-spacing: 2px; text-decoration: none; text-transform: uppercase; display: inline-block; }
+    .brand-logo .base-text { color: #000; }
+    .brand-logo .overlay-text { position: absolute; top: 0; left: 0; color: #fff; clip-path: inset(0 0 0 35%); }
+
+    .insta-link { display: flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; font-weight: 700; font-size: 14px; text-transform: uppercase; background: rgba(0,0,0,0.3); padding: 8px 16px; border-radius: 20px; transition: all 0.3s ease; }
+    .insta-link:hover { background: #fff; color: #B4182D; }
+
+    .hero-split, .hero-split-reverse { display: flex; min-height: 100vh; width: 100vw; }
+    .hero-split { padding-top: 80px; }
+    .split-left, .split-right { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; }
+
+    .split-image { background: url('event1_arts101.jpg') center/cover no-repeat; width: 100%; height: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); min-height: 300px; }
+    .split-image-2 { background: url('event2_arts101.jpg') center/cover no-repeat; width: 100%; height: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); min-height: 300px; }
+
+    .hero-text { text-align: left; max-width: 500px; }
+    .hero-text h1 { font-size: 56px; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; font-weight: 900; }
+    .hero-text p { font-size: 18px; opacity: 0.9; line-height: 1.6; }
+
+    .btn-event { display: inline-block; margin-top: 25px; padding: 12px 30px; background: #fff; color: #B4182D; text-decoration: none; font-weight: 800; border-radius: 30px; text-transform: uppercase; letter-spacing: 1px; transition: transform 0.2s ease; }
+    .btn-event:hover { transform: scale(1.05); }
+
+    .section-container { max-width: 1200px; margin: 80px auto; padding: 0 40px; }
+    .section-title { font-size: 36px; text-transform: uppercase; margin-bottom: 40px; border-bottom: 3px solid #fff; padding-bottom: 10px; font-weight: 900; }
+
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
+    .team-card { background: rgba(0, 0, 0, 0.2); border-radius: 12px; overflow: hidden; text-align: center; text-decoration: none; color: #fff; transition: transform 0.3s ease; padding-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); }
+    .team-card:hover { transform: translateY(-8px); background: rgba(0, 0, 0, 0.4); }
+    .team-card img { width: 100%; height: 240px; object-fit: cover; }
+    .team-card h3 { margin: 15px 0 5px; font-size: 20px; }
+    .team-card p { opacity: 0.8; font-size: 14px; }
+
+    .artist-section { margin-bottom: 50px; }
+    .artist-section h3 { font-size: 24px; margin-bottom: 20px; border-left: 4px solid #fff; padding-left: 12px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+    .gallery-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: transform 0.3s ease; }
+    .gallery-grid img:hover { transform: scale(1.03); }
+
+    .events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .event-card { background: rgba(0, 0, 0, 0.25); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.15); }
+    .event-card a { color: #fff; text-decoration: none; font-size: 20px; font-weight: bold; }
+    .event-card.upcoming { opacity: 0.5; border: 2px dashed rgba(255,255,255,0.3); }
+
+    footer { text-align: center; padding: 40px; background: rgba(0, 0, 0, 0.3); opacity: 0.8; font-size: 14px; }
+
+    @media (max-width: 768px) {
+      .hero-split, .hero-split-reverse { flex-direction: column; }
+      .hero-split-reverse { flex-direction: column-reverse; }
+    }
+  </style>
 </head>
 <body>
 
@@ -51,36 +106,12 @@
   <section class="section-container" id="team">
     <h2 class="section-title">Meet the Team</h2>
     <div class="team-grid">
-      <a href="profile-jay.html" class="team-card">
-        <img src="Jay_profile.jpg" alt="Jay">
-        <h3>Jay</h3>
-        <p>Founder</p>
-      </a>
-      <a href="profile-cody.html" class="team-card">
-        <img src="Cody_profile.jpg" alt="Cody Ng">
-        <h3>Cody Ng</h3>
-        <p>Co-founder</p>
-      </a>
-      <a href="profile-morgan.html" class="team-card">
-        <img src="Morgan_profile.jpg" alt="Morgan">
-        <h3>Morgan</h3>
-        <p>Manager</p>
-      </a>
-      <a href="profile-glacier.html" class="team-card">
-        <img src="Glacier_profile.jpg" alt="Glacier Tsoi">
-        <h3>Glacier Tsoi</h3>
-        <p>Creative Director</p>
-      </a>
-      <a href="profile-austin.html" class="team-card">
-        <img src="Austin_profile.jpg" alt="Austin">
-        <h3>Austin</h3>
-        <p>Member</p>
-      </a>
-      <a href="profile-selina.html" class="team-card">
-        <img src="Selina_profile.jpg" alt="Selina">
-        <h3>Selina</h3>
-        <p>Member</p>
-      </a>
+      <a href="profile-jay.html" class="team-card"><img src="Jay_profile.jpg" alt="Jay"><h3>Jay</h3><p>Founder</p></a>
+      <a href="profile-cody.html" class="team-card"><img src="Cody_profile.jpg" alt="Cody Ng"><h3>Cody Ng</h3><p>Co-founder</p></a>
+      <a href="profile-morgan.html" class="team-card"><img src="Morgan_profile.jpg" alt="Morgan"><h3>Morgan</h3><p>Manager</p></a>
+      <a href="profile-glacier.html" class="team-card"><img src="Glacier_profile.jpg" alt="Glacier Tsoi"><h3>Glacier Tsoi</h3><p>Creative Director</p></a>
+      <a href="profile-austin.html" class="team-card"><img src="Austin_profile.jpg" alt="Austin"><h3>Austin</h3><p>Member</p></a>
+      <a href="profile-selina.html" class="team-card"><img src="Selina_profile.jpg" alt="Selina"><h3>Selina</h3><p>Member</p></a>
     </div>
   </section>
 
@@ -91,52 +122,35 @@
     <div class="artist-section">
       <h3>Jay's Artworks</h3>
       <div class="gallery-grid">
-        <img src="Jay1_arts101.jpg" alt="Jay 1">
-        <img src="Jay2_arts101.jpg" alt="Jay 2">
-        <img src="Jay3_arts101.jpg" alt="Jay 3">
-        <img src="Jay4_arts101.jpg" alt="Jay 4">
-        <img src="picture_red03.jpg" alt="Jay 5">
+        <img src="Jay1_arts101.jpg" alt="Jay 1"><img src="Jay2_arts101.jpg" alt="Jay 2"><img src="Jay3_arts101.jpg" alt="Jay 3"><img src="Jay4_arts101.jpg" alt="Jay 4"><img src="picture_red03.jpg" alt="Jay 5">
       </div>
     </div>
 
     <div class="artist-section">
       <h3>Cody's Artworks</h3>
       <div class="gallery-grid">
-        <img src="Cody2_arts101.jpg" alt="Cody 1">
-        <img src="Cody3_arts101.jpg" alt="Cody 2">
-        <img src="Cody4_arts101.jpg" alt="Cody 3">
-        <img src="Cody5_arts101.jpg" alt="Cody 4">
-        <img src="picture_red04.jpg" alt="Cody 5">
+        <img src="Cody2_arts101.jpg" alt="Cody 1"><img src="Cody3_arts101.jpg" alt="Cody 2"><img src="Cody4_arts101.jpg" alt="Cody 3"><img src="Cody5_arts101.jpg" alt="Cody 4"><img src="picture_red04.jpg" alt="Cody 5">
       </div>
     </div>
 
     <div class="artist-section">
       <h3>Morgan's Artworks</h3>
       <div class="gallery-grid">
-        <img src="Morgan_arts101_2.jpg" alt="Morgan 1">
-        <img src="Morgan2_arts101_2.jpg" alt="Morgan 2">
-        <img src="Morgan4_arts101_2.jpg" alt="Morgan 3">
-        <img src="picture_red02_2.jpg" alt="Morgan 4">
+        <img src="Morgan_arts101_2.jpg" alt="Morgan 1"><img src="Morgan2_arts101_2.jpg" alt="Morgan 2"><img src="Morgan4_arts101_2.jpg" alt="Morgan 3"><img src="picture_red02_2.jpg" alt="Morgan 4">
       </div>
     </div>
 
     <div class="artist-section">
       <h3>Glacier's Artworks</h3>
       <div class="gallery-grid">
-        <img src="picture_red07_2.jpg" alt="Glacier 1">
-        <img src="picture_red01_2.jpg" alt="Glacier 2">
-        <img src="Glacier3_arts101_2.jpg" alt="Glacier 3">
-        <img src="Glacier4_arts101_2.jpg" alt="Glacier 4">
+        <img src="picture_red07_2.jpg" alt="Glacier 1"><img src="picture_red01_2.jpg" alt="Glacier 2"><img src="Glacier3_arts101_2.jpg" alt="Glacier 3"><img src="Glacier4_arts101_2.jpg" alt="Glacier 4">
       </div>
     </div>
 
     <div class="artist-section">
       <h3>Selina's Artworks</h3>
       <div class="gallery-grid">
-        <img src="picture_red05.jpg" alt="Selina 1">
-        <img src="Selina1_arts101.jpg" alt="Selina 2">
-        <img src="Selina2_arts101.jpg" alt="Selina 3">
-        <img src="Selina3_arts101.jpg" alt="Selina 4">
+        <img src="picture_red05.jpg" alt="Selina 1"><img src="Selina1_arts101.jpg" alt="Selina 2"><img src="Selina2_arts101.jpg" alt="Selina 3"><img src="Selina3_arts101.jpg" alt="Selina 4">
       </div>
     </div>
   </section>
@@ -159,6 +173,5 @@
     <p>&copy; ARTS101. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
